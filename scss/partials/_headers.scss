@@ -18,8 +18,15 @@ body {
         
             .logo {
                 grid-area: logo;
-                padding-inline: 10px;
+            
                 width: 100%;
+                max-height: 150px;
+                justify-content: start;
+
+                .logo > img {
+
+                    align-items: end;
+                }
             }
             .hero_titulo {
                 grid-area: titulo;
@@ -41,13 +48,10 @@ body {
                             text-decoration: none;
                             
                         }
-                        
                     }
                     .navbar-toggler {
                         background-color: $colorIconoMenu;
                     }
-
-                    
                 }   
             }
             .carrito {
@@ -63,8 +67,6 @@ body {
                     }
 
                 }
-
-                
             }
         }
     }

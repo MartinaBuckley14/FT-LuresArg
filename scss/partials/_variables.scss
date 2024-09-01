@@ -1,0 +1,33 @@
+/*=============================================
+=                   FUENTES                  =
+=============================================*/
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Marcellus&family=Poiret+One&display=swap');
+
+$fuenteTitulos: "Edu VIC WA NT Beginner", cursive;
+
+/*============  PALETA DE COLORES =============*/
+$colorTitulos: white;
+$colorLetras: rgb(215, 187, 155);
+$colorSubtitulos: rgba(189, 142, 99, 1);
+$coyote: rgba(131, 99, 66, 1);
+$coffee: rgba(121, 85, 59, 1);
+$caf-noir: rgba(78, 53, 37, 1);
+$colorFondo:  rgba(11, 9, 11, 1);
+$colorIconoMenu: rgba(249, 248, 248, 0.765);
+$backgroundtooltip: rgba(0, 0, 0, 0.799);
+
+
+/*=============================================
+=                   MIXING                   =
+=============================================*/
+@mixin headers ($background-image,$background-repeat) {
+    background-image: $background-image;
+    background-size: cover;
+    background-repeat: $background-repeat;
+    background-position: center center;
+    width: 100%;
+}
+
+
+
+/*============  End of Section  =============*/

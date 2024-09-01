@@ -1,0 +1,72 @@
+body {
+    header {
+
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #0606068d;
+        color: $colorTitulos;
+        padding: 20px 20px;
+        z-index: 1000;
+    
+        .hero {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "logo titulo menu";
+            justify-items: center;
+        
+            .logo {
+                grid-area: logo;
+                padding-inline: 10px;
+                width: 100%;
+            }
+            .hero_titulo {
+                grid-area: titulo;
+                font-family: $fuenteTitulos;
+                font-size: 60px;
+                color: $colorTitulos;
+                align-content: center;
+            }
+            .hero_navbar {
+                grid-area: menu;
+                justify-content: center;
+                align-self: center;
+                .navbar {
+
+                    .navbar-nav {
+                        .nav-link{
+                            font-size: 30px;
+                            color: $colorTitulos; 
+                            text-decoration: none;
+                            
+                        }
+                        
+                    }
+                    .navbar-toggler {
+                        background-color: $colorIconoMenu;
+                    }
+
+                    
+                }   
+            }
+            .carrito {
+                align-self: center;
+
+                .carrito-link {
+                    display: inline-block;
+                    width: 100%;
+
+                    .carrito_img {
+                        width: 150px;
+                        height: auto;
+                    }
+
+                }
+
+                
+            }
+        }
+    }
+   
+}

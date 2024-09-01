@@ -1,0 +1,30 @@
+main {
+    grid-area: cuerpo;
+
+    .intro {
+        .intro_titulo {
+            font-size: 45px;
+            font-family: $fuenteTitulos;
+            color: $colorSubtitulos;
+
+            padding-left: 12rem;
+        }
+        .intro_texto {
+            padding: 0rem 6rem;
+
+            font-size: 28px;
+            color: $colorLetras;
+        }
+    }
+    .intro_galeria {
+        display: grid;
+        grid-template-rows: .7fr;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        
+    
+        gap: 4rem;
+        padding: 2rem;
+        
+    }
+}

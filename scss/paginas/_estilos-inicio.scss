@@ -1,6 +1,33 @@
 main {
     grid-area: cuerpo;
 
+    .galeria {
+        display: grid;
+        grid-template-rows: 0.9fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "foto texto ";
+        align-items: center;
+        justify-items: center;
+
+        .foto_galeria {
+            max-width: 100%;
+            max-height: 90%;
+            object-fit: cover;
+        }
+
+        .foto_galeria {
+            grid-area: foto;
+        }
+        .texto_galeria {
+            grid-area: texto;
+            max-width: 100%;
+            align-items: start;
+
+            color: $colorLetras;
+            font-size: 35px;
+        }
+    }
     .intro {
         .intro_titulo {
             font-size: 45px;
@@ -12,7 +39,7 @@ main {
         .intro_texto {
             padding: 0rem 6rem;
 
-            font-size: 28px;
+            font-size: 35px;
             color: $colorLetras;
         }
     }

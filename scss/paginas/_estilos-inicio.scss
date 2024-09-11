@@ -54,4 +54,58 @@ main {
         padding: 2rem;
         
     }
+
+    #productos {
+
+        margin-top: 4rem;
+
+        .galeria_productos {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-items: center;
+            align-items: stretch;
+            
+            gap: 3rem;
+            margin: 4rem;
+            
+            .producto {
+                max-width: 70%;
+                max-height: 100%;
+    
+                .producto_body{
+                    background-color: $caf-noir;
+                    color: $colorLetras;
+                    padding: .5rem;
+                    border-radius: 1rem;
+                    margin-top: -2rem;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    .producto_titulo {
+                        
+                    }
+    
+                    .producto_button {
+                        max-width: 25%;
+                        border-radius: .3rem;
+                        align-self: flex-end;
+                        margin: 1rem;
+                        padding-inline: .5rem;
+                        background-color: $coyote;
+                        border-color: transparent;
+                        color: $colorTitulos;
+                    }
+                }
+    
+                .producto_img {
+                    border-radius: 2rem;
+                    
+                }
+            }
+        }
+    }
+    
 }

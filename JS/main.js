@@ -92,7 +92,7 @@ function comprar() {
         salir();
     }else {
         alert("El número ingresado no corresponde a ningun producto. \n Ingrese un número del 1 al 4 para ver detalles del producto o 5 para terminar y salir");
-        menuInicial();
+        comprar();
     }
 }
 

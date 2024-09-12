@@ -31,6 +31,7 @@ let señuelo2 = señuelos[1].nombre;
 let señuelo3 = señuelos[2].nombre;
 let señuelo4 = señuelos[3].nombre;
 
+
 let sumaTotal = 0;
 
 let carrito = [];
@@ -44,10 +45,13 @@ function menuInicial() {
         "2-" + señuelo2 + "\n" +
         "3-" + señuelo3 + "\n" +
         "4-" + señuelo4 + "\n" +
+        "5- Terminar y salir\n"
         "¿De cuál le gustaría conocer los detalles?";
 
     return parseInt(prompt(menuInicial));
 }
+
+
 
 //Mostrar datos del señuelo
 
@@ -67,14 +71,14 @@ function mostrarDatos(señueloElegido) {
             alert("El total de su compra es $" + sumaTotal);
         }else {
             alert("Opcion invalida, vuelva a intentar por SI o por NO.");
-            comprar();
+            mostrarDatos(señueloElegido);
         }
 
     }else if (decision === "no") {
         comprar();
     }else {
         alert("Opcion invalida, vuelva a intentar por SI o por NO.");
-        comprar();
+        mostrarDatos(señueloElegido);
     }
 }
 
@@ -82,11 +86,19 @@ function mostrarDatos(señueloElegido) {
 function comprar() {
     let señueloElegido= menuInicial();
 
-    if (señueloElegido >= 1 || señueloElegido <= 4 ){
+    if (señueloElegido >= 1 && señueloElegido <= 4 ){
         mostrarDatos(señueloElegido);
+    }else if (señueloElegido === 5){
+        salir();
     }else {
-        alert("El número ingresado no corresponde a ningun producto. \n Ingrese un número del 1 al 4.");
-        comprar();
+        alert("El número ingresado no corresponde a ningun producto. \n Ingrese un número del 1 al 4 para ver detalles del producto o 5 para terminar y salir");
+        salir(señueloElegido);
+    }
+}
+
+function salir(señueloElegido){
+    if (señueloElegido === 5){
+        alert("Muchas gracias por su compra, vuelva pronto!")
     }
 }
 

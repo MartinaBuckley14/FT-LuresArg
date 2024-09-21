@@ -34,7 +34,7 @@ main {
             font-family: $fuenteTitulos;
             color: $colorSubtitulos;
 
-            padding-left: 12rem;
+            padding-left: 7rem;
         }
         .intro_texto {
             padding: 0rem 6rem;
@@ -55,55 +55,65 @@ main {
         
     }
 
-    #productos {
+    .conteiner {
 
-        margin-top: 4rem;
+        margin: 4rem;
 
-        .galeria_productos {
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            justify-items: center;
-            align-items: stretch;
-            
-            gap: 3rem;
-            margin: 4rem;
-            
-            .producto {
-                max-width: 70%;
-                max-height: 100%;
-    
-                .producto_body{
-                    background-color: $caf-noir;
-                    color: $colorLetras;
-                    padding: .5rem;
-                    border-radius: 1rem;
-                    margin-top: -2rem;
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    gap: .5rem;
+        .titulo_productos {
+            font-family: $fuenteSubTitulos;
+            font-size: 45px;
+            color: $colorSubtitulos;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+    }
 
-                    .producto_titulo {
-                        
-                    }
-    
-                    .producto_button {
-                        max-width: 25%;
-                        border-radius: .3rem;
-                        align-self: flex-end;
-                        margin: 1rem;
-                        padding-inline: .5rem;
-                        background-color: $coyote;
-                        border-color: transparent;
-                        color: $colorTitulos;
-                    }
+    .galeria_productos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        gap: 2rem;
+        margin: 4rem;
+        
+        .producto {
+            max-width: 70%;
+            max-height: 100%;
+
+            .producto_body {
+                background-color: $caf-noir;
+                color: $colorLetras;
+                padding: .5rem;
+                border-radius: 1rem;
+                margin-top: -2rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+
+                .producto_agregar {
+                    max-width: 25%;
+                    border-radius: .3rem;
+                    align-self: end;
+                    margin: 1rem;
+                    padding-inline: .5rem;
+                    background-color: $coyote;
+                    border-color: $coffee;
+                    color: $colorTitulos;
+                    transition: background-color .2s, color .2s;
                 }
-    
-                .producto_img {
-                    border-radius: 2rem;
-                    
+
+                .producto_agregar:hover {
+                    background-color: $colorLetras;
+                    color: $caf-noir;
+                    border-color: $coyote;
                 }
+
+            }
+            
+            .img_producto {
+                max-width: 100%;
+                height: auto;
+                border-radius: 1rem;
             }
         }
     }

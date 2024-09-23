@@ -105,15 +105,21 @@
 
 // comprar();
 
+/*=============================================
+=               PRE-ENTREGA 3                =
+=============================================*/
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 const galeriaProductos = document.querySelector("#productos");
-const carritoConProductos = document.querySelector("#carrito-con-productos");
+let carritoVacio = document.querySelector("#carrito_vacio");
+let carritoConProductos = document.querySelector("#carrito_con_productos");
 const carritoPrecioFinal = document.querySelector("#carrito-precio-final");
 
-const productos = [];
-let carrito = [];
+//CREO ARRAY DE PRODUCTOS
+const señuelos = [];
 
 
-class senuelo {
+class señuelo {
     constructor (id, foto, nombre, modelo, precio){
         this.id = id;
         this.foto = foto;
@@ -124,10 +130,12 @@ class senuelo {
 }
 
 
-productos.push(new senuelo("knr", "./multimedia/fotoprod/koinor.jpeg", "Koinor", "Golden-boy", 3000));
-productos.push(new senuelo("teit", "multimedia/fotoprod/teitei.jpg", "Teitei", "Flouting", 600));
-productos.push(new senuelo("ruf", "./multimedia/fotoprod/rufa.jpeg", "Rufa", "Semi-sinking", 900));
+señuelos.push(new señuelo("knr", "./multimedia/fotoprod/koinor.jpeg", "Koinor", "Golden-boy", 3000));
+señuelos.push(new señuelo("teit", "multimedia/fotoprod/teitei.jpg", "Teitei", "Flouting", 600));
+señuelos.push(new señuelo("ruf", "./multimedia/fotoprod/rufa.jpeg", "Rufa", "Semi-sinking", 900));
 
+localStorage.setItem("productos", JSON.stringify(señuelos))
+//CREAR TARJETAS PARA GALERIA DE PRODUCTOS
 
 /* Estilo de tarjeta de producto. */
 /* <div class="producto">
@@ -140,53 +148,102 @@ productos.push(new senuelo("ruf", "./multimedia/fotoprod/rufa.jpeg", "Rufa", "Se
     </div>
 */
 
-productos.forEach((senuelo) => {
+señuelos.forEach(señuelo => {
     let div = document.createElement("div");
     div.classList.add("producto");
     div.innerHTML = `
-        <img class= "img_producto" src=${senuelo.foto}> 
+        <img class= "img_producto" src=${señuelo.foto}> 
     `;
 
     let divBody = document.createElement("div");
-    divBody.classList.add("producto_body");
+    divBody.classList.add("producto_detalle");
     divBody.innerHTML = `
-        <h3>${senuelo.nombre}</h3>
-        <p>${senuelo.modelo} <br> $${senuelo.precio}</p>
+        <h3>${señuelo.nombre}</h3>
+        <p>${señuelo.modelo} <br> $${señuelo.precio}</p>
+        <button class="producto_agregar" id="${señuelo.id}">Agregar al carrito</button>
     `;
-    
-     
-    let button = document.createElement("button");
-    button.classList.add("producto_agregar");
-    button.innerText = "Agregar al carrito";
-
-    button.addEventListener("click", () => {
-        agregarProducto(senuelo);
-    })
+    let botonAgregar = divBody.querySelector(".producto_agregar");
+    botonAgregar.addEventListener("click", () => agregarProductoAlCarrito(señuelo));
 
     div.append(divBody);
-    divBody.append(button);
     galeriaProductos.append(div);
 })
 
-function agregarProducto(senuelo) {
-    let productoRepetido = carrito.find((senuelo) => senuelo.id === senuelo.id);
+//FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
+function agregarProductoAlCarrito(señuelo) {
+    const productoRepetido = carrito.find(producto => producto.id === señuelo.id);
 
-    carrito.push({...senuelo, cantidad: 1});
-    carrito.push(senuelo);
+    if (productoRepetido) {
+        productoRepetido.cantidad++;
+    }else {
+        carrito.push({...señuelo, cantidad: 1});
+    }
+    
+
+    estadoDelCarrito();
+    
 }
 
+//CHEQUEAR EL ESTADO DEL CARRITO
+function estadoDelCarrito(){
+    //Carrito vacio?
+    if(carrito.length === 0){
+        carritoVacio.classList.remove("carrito-oculto");
+        carritoConProductos.classList.add("carrito-oculto");
+    }else {
+        carritoVacio.classList.add("carrito-oculto");
+        carritoConProductos.classList.remove("carrito-oculto");
+    }
 
+    productosEnCarrito()
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
+//FUNCION PARA CREAR TARJETAS DE PRODUCTOS EN CARRITO
 
+//ESTILO DE TARJETAS
+/*<div class="producto-carrito">
+    <h3>${senuelo.nombre}</h3>
+    <p>$${senuelo.precio}</P>
+    <p>Cant: ${senuelo.cantidad}</p>
+    <p>Subtotal: $${senuelo.precio * senuelo.cantidad}</p>
+    <button class="carrito-button">❌</button>
+</div>*/
 
+//FUNCION PARA CHEQUEAR LOS PRODUCTOS EN CARRITO
+function productosEnCarrito(){
+    carritoConProductos.innerHTML = '';
+    carrito.forEach(señuelo => {
+        let div = document.createElement("div");
+        div.classList.add("producto-carrito");
+        div.innerHTML = `
+          <h3>Señuelo: ${señuelo.nombre}</h3>
+          <p>$${señuelo.precio}</P>
+          <p>Cant: ${señuelo.cantidad}</p>
+          <p>Subtotal: $${señuelo.precio * señuelo.cantidad}</p>
+          <button class="eliminar_producto" id="${señuelo.id}">❌</button>  
+        `
 
+        let botonEliminar = div.querySelector(".eliminar_producto");
+        botonEliminar.addEventListener("click", () => {
+            eliminarProducto(señuelo.id)
+        })
 
+        
+        carritoConProductos.append(div);
+    })
+}
 
+//FUNCION PARA ELIMINAR PRODUCTOS DEL CRRITO
+function eliminarProducto(id) {
+    carrito = carrito.filter(señuelo => señuelo.id !== id);
 
-/*=============================================
-=                   CARRITO                   =
-=============================================*/
+    estadoDelCarrito();
+}
 
-// let carrito = document.querySelector(".productos_en_carrito");
+function calcularTotalCompra(carrito) {
+    return carrito.reduce((acc,señuelo) => acc + (señuelo.precio * señuelo.cantidad), 0);
+}
 
-// carrito = [];
+const totalCompra = calcularTotalCompra(carrito);
+carritoPrecioFinal.innerText = "$"+ totalCompra;

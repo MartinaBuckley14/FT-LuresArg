@@ -79,7 +79,7 @@ main {
             max-width: 70%;
             max-height: 100%;
 
-            .producto_body {
+            .producto_detalle {
                 background-color: $caf-noir;
                 color: $colorLetras;
                 padding: .5rem;
@@ -91,28 +91,25 @@ main {
                 gap: .25rem;
 
                 .producto_agregar {
-                    max-width: 25%;
-                    border-radius: .3rem;
+                    border-radius: 1rem;
                     align-self: end;
                     margin: 1rem;
-                    padding-inline: .5rem;
-                    background-color: $coyote;
-                    border-color: $coffee;
-                    color: $colorTitulos;
+                    padding: .5rem;
+                    background-color: $colorLetras;
+                    color: $caf-noir;
                     transition: background-color .2s, color .2s;
+                    border: 2px solid $coyote;
                 }
 
                 .producto_agregar:hover {
-                    background-color: $colorLetras;
-                    color: $caf-noir;
-                    border-color: $coyote;
+                    background-color: $caf-noir;
+                    color: $colorTitulos;
                 }
 
             }
             
             .img_producto {
                 max-width: 100%;
-                height: auto;
                 border-radius: 1rem;
             }
         }

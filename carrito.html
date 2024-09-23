@@ -11,9 +11,9 @@
 </head>
 <body>
     <header>
-      <section class="hero fixed-top">
+      <section class="hero">
           <a class="logo" href="./index.html"><img src="../multimedia/logo.png" alt="FT Señuelos"></a>
-          <h1 class="hero_titulo">Carrito</h1>
+          <h2 class="hero_titulo">Carrito</h2>
           <div class="hero_navbar">
               <nav class="navbar navbar-expand-lg align-items-center">
                 <div class="container-fluid">
@@ -27,7 +27,7 @@
                       <a class="link nav-link" href="../index.html#productos" data-texto="Productos">Productos</a>
                           
                       <div class="carrito">
-                        <a class="link carrito-link" href="./carrito.html" data-texto="Carrito"><img class="carrito_img link" src="../multimedia/carrito.png" alt="carrito"></a>
+                        <a class="link carrito-link" href="carrito.html" data-texto="Carrito"><img class="carrito_img link" src="../multimedia/carrito.png" alt="carrito"></a>
                       </div>
                     </div>
                   </div> 
@@ -37,23 +37,32 @@
       </section>
     </header>
     <main>
-      <section class="conteiner">
-        <h class="titulo">Carrito</h2>
-          <div class="carrito">
-            <div class="carrito-con-productos" id="carrito-con-productos">
-          
-            </div>
-            <div class="carrito-final">
-              <h2>Total: <span id="carrito-precio-final">$0</span></h2>
-            </div>
+      <section class="conteiner-carrito">
+        <div class="carrito">
+          <div id="carrito_vacio">
+            <p>Que estas esperando? Elegí tu proximo señuelo 🎣</p>
           </div>
-
+          <div class="carrito-oculto" id="carrito_con_productos">
+                
+          </div>
+        </div>
+        <div class="carrito-final">
+          <h2>Total: <span id="carrito-precio-final">$0</span></h2>
+        </div>
       </section>
     </main>
     <footer>
-
+      <div class="media">
+        <a class="link link-footer" href="https://www.instagram.com/senuelos_artesanales_ft/" data-texto="Instagram"><img src="../multimedia/icono-instagram.png" alt="icono instagram"></a>
+        <a class="link link-footer" href="https://wa.me/2323270204" data-texto="Whatsapp"><img src="../multimedia/icono-wpp.png" alt="icono whatsapp"></a>
+        <a class="link link-footer" href="https://www.youtube.com/@senuelosartesanalesft7779" data-texto="Youtube"><img src="../multimedia/icono-youtube.png" alt="icono youtube"></a>
+        <a class="link link-footer" href="https://www.facebook.com/SenuelosArtesanalesFT" data-texto="Facebook"><img src="../multimedia/icono-facebook.png" alt="icono facebook"></a>
+      </div>
+      <p>Copyright - Todos los derechos reservados</p>
     </footer>
     <!------script boostrap------------>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="./JS/carrito.js"></script>
 </body>
 </html>

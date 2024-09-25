@@ -16,19 +16,4 @@ $caf-noir: rgba(78, 53, 37, 1);
 $colorFondo:  rgba(11, 9, 11, 1);
 $colorIconoMenu: rgba(249, 248, 248, 0.765);
 $backgroundtooltip: rgba(0, 0, 0, 0.799);
-
-
-/*=============================================
-=                   MIXING                   =
-=============================================*/
-@mixin headers ($background-image,$background-repeat) {
-    background-image: $background-image;
-    background-size: cover;
-    background-repeat: $background-repeat;
-    background-position: center center;
-    width: 100%;
-}
-
-
-
 /*============  End of Section  =============*/

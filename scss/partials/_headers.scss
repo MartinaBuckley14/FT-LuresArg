@@ -20,7 +20,8 @@ body {
                 grid-area: logo;
             
                 width: 100%;
-                min-height: 100px;
+                max-height: 800px;
+                min-height: 200px;
                 justify-content: start;
 
                 .logo > img {

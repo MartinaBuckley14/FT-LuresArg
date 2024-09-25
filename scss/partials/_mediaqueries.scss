@@ -1,0 +1,481 @@
+//MODELO RESPONSIVE
+/*************TAMAÑO XXL*************/
+@media (max-width: 2000px) { 
+    /*============  INICIO =============*/
+    body{ 
+        header{
+            .hero { 
+                justify-content: space-around;
+
+                .hero_titulo {
+                    font-size: 45px;
+                }
+
+                .hero_navbar {
+                    .navbar {
+                        
+                        .navbar-nav {
+                
+                            .nav-link {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                } 
+                
+                .logo {
+                    width: 70%;
+                }
+            } 
+        }
+        .galeria {
+
+            .foto_galeria {
+                align-items: center;
+            }
+
+            .texto_galeria {
+                margin: 0 3rem;
+                text-wrap: wrap;
+               font-size: 30px;
+               text-align: center;
+            }
+        }
+
+        .intro {
+
+            .intro_titulo {
+                font-size: 40px;
+                padding-left: 3rem;
+            }
+
+            .intro_texto {
+                font-size: 30px;
+                text-align:inherit;
+            }
+        }
+
+        .conteiner {
+            margin: 3rem;
+
+            .titulo_productos {
+                font-size: 40px;
+                margin-bottom: 0;
+            }
+
+            .galeria_productos {
+
+                margin: 3rem 2rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                justify-items: center;
+                gap: 3rem;
+
+                .producto {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    /*============  FOOTER =============*/
+    .media {
+        
+        & img {
+            height: 50px;
+            align-self: end;
+        }
+
+        .text_footer {
+            font-size: 12px;
+        }
+    }
+}
+/*************TAMAÑO XL*************/
+@media (max-width: 1199.98px) { 
+    /*============  INICIO =============*/
+    body{ 
+        header{
+            .hero { 
+                justify-content: space-around;
+
+                .hero_titulo {
+                    font-size: 45px;
+                }
+
+                .hero_navbar {
+                    .navbar {
+                        
+                        .navbar-nav {
+                
+                            .nav-link {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                } 
+                
+                .logo {
+                    width: 70%;
+                }
+            } 
+        }
+        .galeria {
+
+            .foto_galeria {
+                align-items: center;
+            }
+
+            .texto_galeria {
+                margin: 0 3rem;
+                text-wrap: wrap;
+               font-size: 30px;
+               text-align: center;
+            }
+        }
+
+        .intro {
+
+            .intro_titulo {
+                font-size: 40px;
+                padding-left: 3rem;
+            }
+
+            .intro_texto {
+                font-size: 30px;
+                text-align:inherit;
+            }
+        }
+
+        .conteiner {
+            margin: 3rem;
+
+            .titulo_productos {
+                font-size: 40px;
+                margin-bottom: 0;
+            }
+
+            .galeria_productos {
+
+                margin: 3rem 2rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                justify-items: center;
+                gap: 3rem;
+
+                .producto {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    /*============  FOOTER =============*/
+    .media {
+        
+        img {
+            height: 50px;
+            align-self: end;
+        }
+
+        .text_footer {
+            font-size: 12px;
+        }
+    }
+}
+
+/*************TAMAÑO LG*************/
+@media (max-width: 991.98px) { 
+    /*============  INICIO =============*/
+    body{ 
+        header{
+            .hero { 
+                justify-content: space-around;
+
+                .hero_titulo {
+                    font-size: 45px;
+                }
+
+                .hero_navbar {
+                    .navbar {
+                        .navbar-nav {
+                            
+                            .nav-link {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                } 
+                
+                .logo {
+                    width: 60%;
+                }
+            } 
+        }
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+
+            
+
+            .foto_galeria {
+                max-width: 80%;
+                align-items: center;
+            }
+
+            .texto_galeria {
+                margin: 0 3rem;
+                text-wrap: wrap;
+               font-size: 30px;
+               text-align: center;
+            }
+        }
+
+        .intro {
+
+            .intro_titulo {
+                font-size: 40px;
+                padding-left: 3rem;
+            }
+
+            .intro_texto {
+                font-size: 30px;
+                text-align:inherit;
+            }
+        }
+
+        .conteiner {
+            margin: 3rem;
+
+            .titulo_productos {
+                font-size: 40px;
+                margin-bottom: 0;
+            }
+
+            .galeria_productos {
+
+                margin: 3rem 2rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                justify-items: center;
+                gap: 3rem;
+
+                .producto {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    /*============  FOOTER =============*/
+    .media {
+        
+        & img {
+            height: 50px;
+            align-self: end;
+        }
+
+        .text_footer {
+            font-size: 12px;
+        }
+    }
+}
+
+/*************TAMAÑO MD*************/
+@media (max-width: 767.98px) {
+    /*============  INICIO =============*/
+    body{ 
+        header{
+            .hero { 
+                justify-content: space-around;
+
+                .hero_titulo {
+                    font-size: 40px;
+                }
+
+                .hero_navbar {
+                    .navbar {
+                        .navbar-nav {
+                            
+                            .nav-link {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                } 
+                
+                .logo {
+                    width: 55%;
+                }
+            } 
+        }
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+
+            
+
+            .foto_galeria {
+                max-width: 70%;
+                align-items: center;
+            }
+
+            .texto_galeria {
+                margin: 0 3rem;
+                text-wrap: wrap;
+               font-size: 25px;
+               text-align: center;
+            }
+        }
+
+        .intro {
+
+            .intro_titulo {
+                font-size: 35px;
+                padding-left: 3rem;
+            }
+
+            .intro_texto {
+                font-size: 25px;
+                text-align:inherit;
+            }
+        }
+
+        .conteiner {
+            margin: 3rem;
+
+            .titulo_productos {
+                font-size: 35px;
+                margin-bottom: 0;
+            }
+
+            .galeria_productos {
+
+                margin: 2rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                gap: 3rem;
+
+                .producto {
+                    width: 100%;
+                    align-self: center;
+                }
+            }
+        }
+    }
+    /*============  FOOTER =============*/
+    .media {
+        
+        & img {
+            height: 45px;
+            align-self: end;
+        }
+
+        .text_footer {
+            font-size: 10px;
+        }
+    }
+}
+
+/*************TAMAÑO SM*************/
+@media (max-width: 575.98px) { 
+    /*============  INICIO =============*/
+    body{ 
+        header{
+            .hero { 
+                justify-content: space-around;
+
+                .hero_titulo {
+                    font-size: 35px;
+                }
+
+                .hero_navbar {
+                    .navbar {
+                        .navbar-nav {
+                            
+                            .nav-link {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                } 
+                
+                .logo {
+                    min-height: 110%;
+                }
+            } 
+        }
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+
+            
+
+            .foto_galeria {
+                max-width: 70%;
+                align-items: center;
+            }
+
+            .texto_galeria {
+                margin: 0 3rem;
+                text-wrap: wrap;
+               font-size: 20px;
+               text-align: center;
+            }
+        }
+
+        .intro {
+
+            .intro_titulo {
+                font-size: 30px;
+                padding-left: 3rem;
+            }
+
+            .intro_texto {
+                font-size: 20px;
+            }
+        }
+
+        .conteiner {
+            margin: 3rem;
+
+            .titulo_productos {
+                font-size: 30px;
+                margin-bottom: 0;
+            }
+
+            .galeria_productos {
+
+                margin: 2rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
+                gap: 3rem;
+
+                .producto {
+                    width: 100%;
+                    align-self: center;
+                }
+            }
+        }
+    }
+    /*============  FOOTER =============*/
+    .media {
+        padding: 0;
+        gap: 0;
+        max-height: 20%;
+
+        & img {
+            height: 40px;
+            align-self: end;
+        }
+
+        .text_footer {
+            font-size: 6px;
+        }
+    }
+}

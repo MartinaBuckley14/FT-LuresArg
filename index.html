@@ -7,8 +7,11 @@
   <link rel="shortcut icon" href="./multimedia/logo.png" type="image/x-icon">
   <!---link bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!---link iconos bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!---link animaciones-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <!---link estilos-->
   <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -30,7 +33,8 @@
                 <a class="link nav-link" href="#productos" data-texto="Productos">Productos</a>
                 
                 <div class="carrito">
-                  <a class="link carrito-link" href="carrito.html" data-texto="Carrito"><img class="carrito_img link" src="./multimedia/carrito.png" alt="carrito"></a>
+                  
+                  <a class="link carrito-link" href="carrito.html" data-texto="Carrito"><i class="bi bi-cart3 fs-1"></i></a>
                 </div>
               </div>
               
@@ -43,18 +47,17 @@
   <main>
     <section class="galeria">
       <img class="foto_galeria" src="./multimedia/fotoprod/fede.jpeg" alt="">
-      <p class="texto_galeria">
-        Mi nombre es Federico Trejo, soy el creador de FT Lures. <br> Inicie con la producción artesanal de señuelos en el año 2018.  
-      </p>
+      <p class="texto_creador_galeria">Mi nombre es Federico Trejo y soy el creador de FT Lures.</p>
+
+      <p class="texto_galeria"> En el apasionante mundo de la pesca deportiva, FT Lures Argentina se ha destacado como una marca innovadora y de alta calidad, dedicada a ofrecer productos diseñados específicamente para maximizar la experiencia del pescador. Con un enfoque en la creación de señuelos que imitan la naturaleza de las presas, FT Lures combina tecnología avanzada y conocimientos profundos sobre el comportamiento de los peces. Desde sus inicios, la marca ha buscado no solo atraer a los pescadores más experimentados, sino también inspirar a nuevas generaciones a explorar la belleza y el desafío de la pesca en las costas argentinas. A través de una variedad de modelos y colores, FT Lures se ha convertido en un aliado indispensable para quienes buscan capturas memorables en el mar.</p> 
     </section>
 
     <!---- SECCION INTRODUCCION ---->
     <section class="intro" id="presentacion">
       <h2 class="intro_titulo">Nuestros inicios</h2>
-      <p class="intro_texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium quo tempora ipsum neque ea, in consectetur impedit sequi aliquam molestias corporis enim perferendis non aperiam mollitia facilis. Error vitae dolores natus dolor nihil praesentium doloribus. Odio nostrum debitis numquam reprehenderit harum quidem animi, totam hic corporis aperiam quod dolor architecto laborum. Numquam, architecto quia. Porro, esse aliquam repellendus eligendi tempora vitae, alias expedita soluta aliquid, odit distinctio laudantium illo eius temporibus. Fugit laboriosam consequatur, temporibus architecto sit saepe eligendi debitis autem alias ea porro accusamus illo amet perferendis sunt reiciendis voluptates repellendus doloribus. Dolores sint, magni beatae, nisi modi vitae, tenetur corrupti natus architecto ullam cupiditate optio! Dolore ratione magni voluptatum adipisci dicta in atque, debitis nulla aliquam quis dolores quam! Consequatur blanditiis laborum itaque, ex quod earum hic distinctio tempora accusamus accusantium velit architecto dolore repellat officiis praesentium eius? Molestiae ex quo aspernatur labore earum ad a similique, laudantium tempora odit, non natus repellat ut iure libero iste.</p> 
-      <!-- <div class="intro_galeria" data-aos="fade-down" data-aos-duration="1500">
-        <img class="evolucion" src="./multimedia/foto prod/Produccion.jpg" alt="Cuadro evolucion">
-      </div>-->
+      <p class="intro_texto">La pesca es más que un pasatiempo; es una forma de conectar con la naturaleza y disfrutar de momentos de tranquilidad. Con esta premisa, decidí emprender un proyecto que fusiona mi amor por la pesca con la creatividad.<br>
+
+      La idea surgió de mis propias experiencias en el agua, donde me di cuenta de que muchos de los señuelos comerciales no cumplían con mis expectativas en términos de efectividad y diseño. Así, comencé a investigar y experimentar con diferentes materiales y técnicas, buscando crear señuelos que no solo fueran funcionales, sino también visualmente atractivos.</p> 
     </section>
 
     <!---- SECCION DE PRODUCTOS ---->
@@ -99,6 +102,8 @@
   <script>
     AOS.init();
   </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./JS/main.js"></script>
 </body>
 </html>

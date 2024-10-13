@@ -43,6 +43,9 @@ body {
                 .navbar {
 
                     .navbar-nav {
+                        .carrito {
+                            margin: 0 2rem;
+                        }
                         .nav-link{
                             font-size: 30px;
                             color: $colorTitulos; 

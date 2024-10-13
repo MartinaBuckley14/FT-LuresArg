@@ -1,0 +1,9 @@
+[
+    {"id":"knr","foto":"./multimedia/fotoprod/koinor.jpeg","nombre":"Koinor","modelo":"Golden-boy","precio":3000},
+    {"id":"teit","foto":"./multimedia/fotoprod/teitei.jpg","nombre":"Teitei","modelo":"Flouting","precio":600},
+    {"id":"ruf","foto":"./multimedia/fotoprod/rufa.jpeg","nombre":"Rufa","modelo":"Semi-sinking","precio":900},
+    {"id":"ban","foto":"./multimedia/fotoprod/ban.modelos.jpeg","nombre":"Bananita","modelo":"Sinking","precio":1300},
+    {"id":"ft","foto":"./multimedia/fotoprod/teitei60.jpg","nombre":"Señuelo FT","modelo":"modelo","precio":0},
+    {"id":"lur","foto":"./multimedia/fotoprod/teitei60versiones.jpg","nombre":"Señuelo Lures","modelo":"modelo","precio":0},
+    {"id":"arg","foto":"./multimedia/fotoprod/teitei60.jpg","nombre":"Señuelo Argentina","modelo":"modelo","precio":0}
+]

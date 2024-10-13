@@ -15,7 +15,15 @@
                     .navbar {
                         
                         .navbar-nav {
-                
+                            
+                            .carrito {
+                                .bi .bi-cart3 {
+                                    font-style:italic;
+                                    margin-left: 6rem;
+                                    color: $coffee;
+                                }
+                         
+                            }
                             .nav-link {
                                 font-size: 22px;
                             }
@@ -30,10 +38,18 @@
         }
         .galeria {
 
+            display: flex;
+            flex-direction: column;
+
             .foto_galeria {
                 align-items: center;
             }
-
+            .texto_creador_galeria {
+                color: $coyote;
+                font-size: 35px;
+                max-width: 80%;
+                margin-top: 2rem;
+            }
             .texto_galeria {
                 margin: 0 3rem;
                 text-wrap: wrap;
@@ -64,16 +80,22 @@
             }
 
             .galeria_productos {
-
-                margin: 3rem 2rem;
+                margin: 2rem;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-columns: 1fr 1fr 1fr;
 
-                justify-items: center;
-                gap: 3rem;
+                
+                
 
                 .producto {
-                    align-self: center;
+                    align-content: center;
+                    .img_producto {
+                        height: 60%;
+                        
+                        object-fit: cover;
+                        object-position: center;
+                    }
                 }
             }
         }
@@ -100,7 +122,7 @@
                 justify-content: space-around;
 
                 .hero_titulo {
-                    font-size: 45px;
+                    font-size: 40px;
                 }
 
                 .hero_navbar {
@@ -109,7 +131,7 @@
                         .navbar-nav {
                 
                             .nav-link {
-                                font-size: 22px;
+                                font-size: 20px;
                             }
                         }
                     }
@@ -124,6 +146,13 @@
 
             .foto_galeria {
                 align-items: center;
+            }
+
+            .texto_creador_galeria {
+                color: $coyote;
+                font-size: 35px;
+                max-width: 80%;
+                margin-top: 2rem;
             }
 
             .texto_galeria {
@@ -159,13 +188,24 @@
 
                 margin: 3rem 2rem;
                 display: grid;
+                grid-template-rows: 1fr;
                 grid-template-columns: 1fr 1fr;
 
                 justify-items: center;
                 gap: 3rem;
 
                 .producto {
-                    align-self: center;
+
+                    .img_producto {
+                        height: 60%;
+                        
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .producto_agregar {
+                        font-size: 22px;
+                    }
                 }
             }
         }
@@ -193,7 +233,7 @@
                 justify-content: space-around;
 
                 .hero_titulo {
-                    font-size: 45px;
+                    font-size: 35px;
                 }
 
                 .hero_navbar {
@@ -223,11 +263,17 @@
                 max-width: 80%;
                 align-items: center;
             }
+            .texto_creador_galeria {
+                color: $coyote;
+                font-size: 31px;
+                max-width: 80%;
+                margin-top: 2rem;
+            }
 
             .texto_galeria {
-                margin: 0 3rem;
-                text-wrap: wrap;
-               font-size: 30px;
+                margin: 1rem 3rem;
+                
+               font-size: 28px;
                text-align: center;
             }
         }
@@ -241,7 +287,7 @@
 
             .intro_texto {
                 font-size: 30px;
-                text-align:inherit;
+                text-align: justify;
             }
         }
 
@@ -259,11 +305,25 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
 
-                justify-items: center;
-                gap: 3rem;
-
                 .producto {
-                    align-self: center;
+                    
+                    .img_producto {
+                        height: 60%;
+                        
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                    .producto_detalle {
+
+                        .producto_nombre {
+                            font-size: 30px;
+                            font-weight: 600;
+                        }
+
+                        .producto_agregar {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }
@@ -291,7 +351,8 @@
                 justify-content: space-around;
 
                 .hero_titulo {
-                    font-size: 40px;
+                    font-size: 30px;
+                    text-align: center;
                 }
 
                 .hero_navbar {
@@ -389,7 +450,8 @@
                 justify-content: space-around;
 
                 .hero_titulo {
-                    font-size: 35px;
+                    font-size: 30px;
+                    text-align: center;
                 }
 
                 .hero_navbar {
@@ -397,7 +459,7 @@
                         .navbar-nav {
                             
                             .nav-link {
-                                font-size: 20px;
+                                font-size: 18px;
                             }
                         }
                     }
@@ -421,8 +483,7 @@
             }
 
             .texto_galeria {
-                margin: 0 3rem;
-                text-wrap: wrap;
+                margin: 2rem 3rem;
                font-size: 20px;
                text-align: center;
             }
@@ -437,6 +498,7 @@
 
             .intro_texto {
                 font-size: 20px;
+                text-align: center;
             }
         }
 

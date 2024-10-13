@@ -115,62 +115,57 @@ let carritoVacio = document.querySelector("#carrito_vacio");
 let carritoConProductos = document.querySelector("#carrito_con_productos");
 const carritoPrecioFinal = document.querySelector("#carrito-precio-final");
 
+
 //CREO ARRAY DE PRODUCTOS
-const señuelos = [];
+const señuelos = fetch("../productos.json")
+.then(resp => resp.json())
+.then(productos => mostrarProductos(productos));
 
 
-class señuelo {
-    constructor (id, foto, nombre, modelo, precio){
-        this.id = id;
-        this.foto = foto;
-        this.nombre = nombre;
-        this.modelo = modelo;
-        this.precio = precio;
-    }
+//CREAR TARJETAS PARA GALERIA DE PRODUCTOS
+function mostrarProductos(señuelos) {
+    señuelos.forEach(señuelo => {
+        let div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+            <img class= "img_producto" src=${señuelo.foto}> 
+        `;
+    
+        let divBody = document.createElement("div");
+        divBody.classList.add("producto_detalle");
+        divBody.innerHTML = `
+            <h3 class="producto_nombre">${señuelo.nombre}</h3>
+            <p>${señuelo.modelo} <br> $${señuelo.precio}</p>
+            <button class="producto_agregar" id="${señuelo.id}">Agregar al carrito</button>
+        `;
+        let botonAgregar = divBody.querySelector(".producto_agregar");
+        botonAgregar.addEventListener("click", () => agregarProductoAlCarrito(señuelo));
+    
+        div.append(divBody);
+        galeriaProductos.append(div);
+    })
 }
 
 
-señuelos.push(new señuelo("knr", "./multimedia/fotoprod/koinor.jpeg", "Koinor", "Golden-boy", 3000));
-señuelos.push(new señuelo("teit", "multimedia/fotoprod/teitei.jpg", "Teitei", "Flouting", 600));
-señuelos.push(new señuelo("ruf", "./multimedia/fotoprod/rufa.jpeg", "Rufa", "Semi-sinking", 900));
-
-localStorage.setItem("productos", JSON.stringify(señuelos))
-//CREAR TARJETAS PARA GALERIA DE PRODUCTOS
-
-/* Estilo de tarjeta de producto. */
-/* <div class="producto">
-        <img class="producto_img" src="./multimedia/fotoprod/ban.12cm.jpeg" alt="">
-        <div class="producto_body">
-         <h4 class="producto_titulo">Señuelo 1</h4>
-         <p>$1000</p>
-         <button class="producto_agregar" id="agregar_preducto" type="submit">Agregar al carrito</button>
-        </div>
-    </div>
-*/
-
-señuelos.forEach(señuelo => {
-    let div = document.createElement("div");
-    div.classList.add("producto");
-    div.innerHTML = `
-        <img class= "img_producto" src=${señuelo.foto}> 
-    `;
-
-    let divBody = document.createElement("div");
-    divBody.classList.add("producto_detalle");
-    divBody.innerHTML = `
-        <h3>${señuelo.nombre}</h3>
-        <p>${señuelo.modelo} <br> $${señuelo.precio}</p>
-        <button class="producto_agregar" id="${señuelo.id}">Agregar al carrito</button>
-    `;
-    let botonAgregar = divBody.querySelector(".producto_agregar");
-    botonAgregar.addEventListener("click", () => agregarProductoAlCarrito(señuelo));
-
-    div.append(divBody);
-    galeriaProductos.append(div);
-})
-
 //FUNCION PARA AGREGAR PRODUCTOS AL CARRITO
 function agregarProductoAlCarrito(señuelo) {
+
+    Toastify({
+        text: "Producto agregado al carrito",
+        duration: 3000,
+        newWindow: false,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+          background: "rgba(189, 142, 99, 1)",
+          borderRadius: "2rem",
+          fontSize: "30px",
+        },
+        onClick: function(){}
+    }).showToast();
+
     const productoRepetido = carrito.find(producto => producto.id === señuelo.id);
 
     if (productoRepetido) {
@@ -199,18 +194,7 @@ function estadoDelCarrito(){
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-//FUNCION PARA CREAR TARJETAS DE PRODUCTOS EN CARRITO
-
-//ESTILO DE TARJETAS
-/*<div class="producto-carrito">
-    <h3>${senuelo.nombre}</h3>
-    <p>$${senuelo.precio}</P>
-    <p>Cant: ${senuelo.cantidad}</p>
-    <p>Subtotal: $${senuelo.precio * senuelo.cantidad}</p>
-    <button class="carrito-button">❌</button>
-</div>*/
-
-//FUNCION PARA CHEQUEAR LOS PRODUCTOS EN CARRITO
+//FUNCION PARA CREAR TARJETAS DE PRODUCTOS Y CHEQUEAR LOS PRODUCTOS EN CARRITO
 function productosEnCarrito(){
     carritoConProductos.innerHTML = '';
     carrito.forEach(señuelo => {
@@ -221,7 +205,7 @@ function productosEnCarrito(){
           <p>$${señuelo.precio}</P>
           <p>Cant: ${señuelo.cantidad}</p>
           <p>Subtotal: $${señuelo.precio * señuelo.cantidad}</p>
-          <button class="eliminar_producto" id="${señuelo.id}">❌</button>  
+          <button class="eliminar_producto" id="${señuelo.id}"><i class="bi bi-trash3"></i></button>  
         `
 
         let botonEliminar = div.querySelector(".eliminar_producto");

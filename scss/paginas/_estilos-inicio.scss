@@ -3,43 +3,59 @@ main {
 
     .galeria {
         display: grid;
-        grid-template-rows: 0.9fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  1fr 2fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas: 
-        "foto texto ";
+        "foto textoCreador  textoCreador"
+        "foto texto  texto";
+        
+        
         align-items: center;
         justify-items: center;
 
         .foto_galeria {
-            max-width: 100%;
-            max-height: 90%;
-            object-fit: cover;
-        }
-
-        .foto_galeria {
             grid-area: foto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+
+            padding-left: 6rem;
+        }
+        .texto_creador_galeria {
+            grid-area: textoCreador;
+            color: $coyote;
+            font-size: 45px;
+            max-width: 80%;
+            font-weight: 500;
         }
         .texto_galeria {
             grid-area: texto;
-            max-width: 100%;
+            max-width: 80%;
             align-items: start;
+            
 
             color: $colorLetras;
-            font-size: 35px;
+            font-size: 40px;
+            font-weight: 300;
+            margin-top: -4rem;
+
+            text-align: center;
+            
         }
     }
     .intro {
         .intro_titulo {
-            font-size: 45px;
+            font-size: 50px;
             font-family: $fuenteTitulos;
             color: $colorSubtitulos;
 
             padding-left: 7rem;
+            margin: 3rem 0 2rem 0;
         }
         .intro_texto {
-            padding: 0rem 6rem;
+            padding: 0rem 3rem;
 
-            font-size: 35px;
+            font-size: 40px;
             color: $colorLetras;
         }
     }
@@ -61,7 +77,7 @@ main {
 
         .titulo_productos {
             font-family: $fuenteSubTitulos;
-            font-size: 45px;
+            font-size: 50px;
             color: $colorSubtitulos;
             padding-left: 3rem;
             margin-bottom: 3rem;
@@ -70,16 +86,34 @@ main {
 
     .galeria_productos {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        overflow: hidden;
+        align-content: center;
         
-        gap: 2rem;
-        margin: 4rem;
+        
+        column-gap: 3rem;
+        margin: 3rem;
         
         .producto {
-            max-width: 70%;
-            max-height: 100%;
+            align-content: center;
+
+            .img_producto {
+                width: 100%;
+                height: 60%;
+                
+                object-fit: cover;
+                object-position: top;
+            }
 
             .producto_detalle {
+
+                .producto_nombre {
+                    font-size: 35px;
+                    font-weight: 600;
+                }
+
+                font-size: 30px;
                 background-color: $caf-noir;
                 color: $colorLetras;
                 padding: .5rem;
@@ -91,6 +125,7 @@ main {
                 gap: .25rem;
 
                 .producto_agregar {
+                    font-size: 25px;
                     border-radius: 1rem;
                     align-self: end;
                     margin: 1rem;

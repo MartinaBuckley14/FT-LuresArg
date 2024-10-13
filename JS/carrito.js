@@ -7,10 +7,14 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const carritoVacio = document.querySelector("#carrito_vacio");
 const carritoConProductos = document.querySelector("#carrito_con_productos");
 const carritoPrecioFinal = document.querySelector("#carrito-precio-final");
+const botonVaciarCarrito = document.querySelector("#boton_vaciar");
+const botonFinalizarCompra = document.querySelector(".boton_final")
+
 
 if(carrito.length > 0) {
     carritoVacio.classList.add("carrito-oculto");
     carritoConProductos.classList.remove("carrito-oculto");
+    
     productosEnCarrito();
 }else {
     carritoVacio.classList.remove("carrito-oculto");
@@ -21,12 +25,8 @@ if(carrito.length > 0) {
 function agregarProductoAlCarrito(señuelo) {
     const productoRepetido = carrito.find(producto => producto.id === señuelo.id);
 
-    if (productoRepetido) {
-        productoRepetido.cantidad++;
-    }else {
-        carrito.push({...señuelo, cantidad: 1});
-    }
-   
+    productoRepetido ? productoRepetido.cantidad++:carrito.push({...señuelo,cantidad:1});
+    
     estadoDelCarrito();
     
 }
@@ -46,18 +46,7 @@ function estadoDelCarrito(){
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-//FUNCION PARA CREAR TARJETAS DE PRODUCTOS EN CARRITO
-
-//ESTILO DE TARJETAS
-/*<div class="producto-carrito">
-    <h3>${senuelo.nombre}</h3>
-    <p>$${senuelo.precio}</P>
-    <p>Cant: ${senuelo.cantidad}</p>
-    <p>Subtotal: $${senuelo.precio * senuelo.cantidad}</p>
-    <button class="carrito-button">❌</button>
-</div>*/
-
-//FUNCION PARA CHEQUEAR LOS PRODUCTOS EN CARRITO
+//FUNCION PARA CREAR TARJETAS DE PRODUCTOS Y CHEQUEAR LOS PRODUCTOS EN CARRITO
 function productosEnCarrito(){
     carritoConProductos.innerHTML = '';
     carrito.forEach(señuelo => {
@@ -68,7 +57,7 @@ function productosEnCarrito(){
           <p>$${señuelo.precio}</P>
           <p>Cant: ${señuelo.cantidad}</p>
           <p>Subtotal: $${señuelo.precio * señuelo.cantidad}</p>
-          <button class="eliminar_producto" id="${señuelo.id}">❌</button>  
+          <button class="eliminar_producto" id="${señuelo.id}"><i class="bi bi-trash3"></i></button>  
         `
 
         let botonEliminar = div.querySelector(".eliminar_producto");
@@ -83,13 +72,25 @@ function productosEnCarrito(){
 
 //FUNCION PARA ELIMINAR PRODUCTOS DEL CRRITO
 function eliminarProducto(id) {
+    Toastify({
+        text: "Producto eliminado del carrito",
+        duration: 3000,
+        newWindow: false,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: false,
+        style: {
+          background: "rgba(189, 142, 99, 1)",
+          borderRadius: "2rem",
+          fontSize: "30px",
+        },
+        onClick: function(){}
+    }).showToast();
+
     const productoRepetido = carrito.find(señuelo => señuelo.id === id);
 
-    if(productoRepetido.cantidad > 1) {
-        productoRepetido.cantidad--;
-    }else {
-        carrito = carrito.filter(señuelo => señuelo.id !== id);
-    }
+    productoRepetido.cantidad > 1 ? productoRepetido.cantidad--:carrito = carrito.filter(señuelo => señuelo.id !== id);
 
     estadoDelCarrito();
     actualizarTotal();
@@ -106,3 +107,49 @@ function calcularTotalCompra(carrito) {
 }
 
 actualizarTotal();
+
+
+//FUNCION PARA VACIAR CARRITO
+function vaciarCarrito () {
+    if(carrito.length > 0) {
+        carrito = [];
+    }
+
+    estadoDelCarrito();
+    actualizarTotal();
+}
+
+botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+
+// FUNCION FINALIZAR COMPRA
+function finalizarCompra() {
+    Swal.fire({
+        title: "Desea finalizar su compra?",
+        text: "El pedido sera enviado al vendedor",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#bd8e63",
+        cancelButtonColor: "#4e3525",
+        confirmButtonText: "Si",
+        cancelButtonText: "No",
+        allowOutsideClick: false,
+        customClass: {
+            title: "tituloAlerta",
+            content: "textoAlerta",
+        }
+        }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Pedido realizado con éxito!",
+            text: "Tu compra ha sido enviada al vendedor, en breve nos pondremos en contacto",
+            icon: "success",
+            confirmButtonColor: "#bd8e63"
+          });
+          vaciarCarrito();
+        }
+        });
+
+        
+}
+
+botonFinalizarCompra.addEventListener("click", finalizarCompra);

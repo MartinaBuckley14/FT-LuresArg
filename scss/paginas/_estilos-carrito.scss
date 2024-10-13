@@ -4,17 +4,17 @@ main {
         padding: 3rem;
         height: 100vh;
         display: grid;
-        grid-template-rows: .5fr;
-        
+        grid-template-rows: repeat(2, auto);
         grid-template-areas: 
-        "productos  productos   productos "
-        " total       total      total ";
+        "productos"
+        "total";
+        align-content: start;
 
         .carrito {
             grid-area: productos;
             width: 100%;
             align-self: self-start;
-            justify-self: center;
+            justify-self: start;
             display: flex;
             flex-direction: column;
 
@@ -29,6 +29,18 @@ main {
                     display: flex;
                     gap: 4rem;
                 }
+
+                .eliminar_producto {
+                    background-color: transparent;
+                    border-color: transparent;
+
+                    .bi {
+                        color: $colorIconoMenu;
+                        align-items: center;
+                    }
+                }
+
+                
             }
             .carrito-oculto {
                 display: none;
@@ -38,14 +50,49 @@ main {
         }
 
         .carrito-final {
+            display: flex;
+            
+            gap: 3rem;
             grid-area: total;
             max-width: 100%;
-            align-self: flex-end;
-            justify-self: end;
+            align-self: end;
+            justify-content: space-between;
 
             color: $colorLetras;
             font-size: 35px;
+            .fin_compra {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .boton_final {
+                    background-color: $colorLetras;
+                    color: $caf-noir;
+                    padding: 20px;
+                    align-self: center;
+                    font-size: 25px;
+                    border-radius: 1rem;
+                }
+            }
+            
+
+            .boton_vaciar {
+                justify-self: start;
+                background-color: $colorLetras;
+                color: $caf-noir;
+                padding: 20px;
+                align-self: end;
+                font-size: 25px;
+                border-radius: 1rem;
+
+                
+            }
+            
+
         }
     }
     
+}
+
+.swal2-popup{
+    font-size: 30px;
 }

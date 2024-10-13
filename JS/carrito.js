@@ -123,31 +123,42 @@ botonVaciarCarrito.addEventListener("click", vaciarCarrito);
 
 // FUNCION FINALIZAR COMPRA
 function finalizarCompra() {
-    Swal.fire({
-        title: "Desea finalizar su compra?",
-        text: "El pedido sera enviado al vendedor",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#bd8e63",
-        cancelButtonColor: "#4e3525",
-        confirmButtonText: "Si",
-        cancelButtonText: "No",
-        allowOutsideClick: false,
-        customClass: {
-            title: "tituloAlerta",
-            content: "textoAlerta",
-        }
-        }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Pedido realizado con éxito!",
-            text: "Tu compra ha sido enviada al vendedor, en breve nos pondremos en contacto",
-            icon: "success",
-            confirmButtonColor: "#bd8e63"
-          });
-          vaciarCarrito();
-        }
+    if(carrito.length > 0){
+        Swal.fire({
+            title: "Desea finalizar su compra?",
+            text: "El pedido sera enviado al vendedor",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#bd8e63",
+            cancelButtonColor: "#4e3525",
+            confirmButtonText: "Si",
+            cancelButtonText: "No",
+            allowOutsideClick: false,
+            customClass: {
+                title: "tituloAlerta",
+                content: "textoAlerta",
+            }
+            }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Pedido realizado con éxito!",
+                text: "Tu compra ha sido enviada al vendedor, en breve nos pondremos en contacto",
+                icon: "success",
+                confirmButtonColor: "#bd8e63"
+              });
+              vaciarCarrito();
+            }
         });
+    }else{
+        Swal.fire({
+            title: "Usted no tiene productos en el carrito",
+            icon: "error",
+            confirmButtonColor: "#bd8e63",
+            confirmButtonText: "Ok",
+            allowOutsideClick: false
+        }); 
+    }
+    
 
         
 }

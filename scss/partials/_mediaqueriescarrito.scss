@@ -53,8 +53,13 @@
             }
 
             #carrito_con_productos {
-                font-size: 25px;
-                margin-bottom: 2rem;
+
+                .producto-carrito{
+                    h3 {font-size: 20px;}
+                    font-size: 20px;
+                    margin-bottom: 2rem;
+                }
+                
             }
         }
         .carrito-final {
@@ -71,7 +76,7 @@
     .conteiner-carrito {
         .carrito {
             .texto_carrito_vacio {
-                font-size: 15px;
+                font-size: 12px;
             }
 
             #carrito_con_productos {

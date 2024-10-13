@@ -113,6 +113,14 @@ actualizarTotal();
 function vaciarCarrito () {
     if(carrito.length > 0) {
         carrito = [];
+    }else{
+        Swal.fire({
+            title: "Su carrito esta vacío",
+            icon: "error",
+            confirmButtonColor: "#bd8e63",
+            confirmButtonText: "Ok",
+            allowOutsideClick: false
+        }); 
     }
 
     estadoDelCarrito();

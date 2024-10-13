@@ -19,12 +19,13 @@ main {
             flex-direction: column;
 
             color: $colorLetras;
-            font-size: 35px;
+            font-size: 32px;
             #carrito_con_productos {
 
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
+                margin-bottom: 2rem;
                 .producto-carrito {
                     display: flex;
                     gap: 4rem;
@@ -59,7 +60,7 @@ main {
             justify-content: space-between;
 
             color: $colorLetras;
-            font-size: 35px;
+            font-size: 32px;
             .fin_compra {
                 display: flex;
                 flex-direction: column;
@@ -67,9 +68,10 @@ main {
                 .boton_final {
                     background-color: $colorLetras;
                     color: $caf-noir;
-                    padding: 20px;
+                    padding: 15px;
                     align-self: center;
-                    font-size: 25px;
+                    
+                    
                     border-radius: 1rem;
                 }
             }
@@ -79,9 +81,9 @@ main {
                 justify-self: start;
                 background-color: $colorLetras;
                 color: $caf-noir;
-                padding: 20px;
+                padding: 15px;
                 align-self: end;
-                font-size: 25px;
+                
                 border-radius: 1rem;
 
                 

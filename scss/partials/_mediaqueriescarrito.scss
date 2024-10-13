@@ -1,0 +1,99 @@
+//CARRITO RESPONSIVE
+
+/*************TAMAÑO XL*************/
+@media (max-width: 1199.98px) { 
+    .conteiner-carrito {
+        .carrito {
+            .texto_carrito_vacio {
+                font-size: 30px;
+            }
+
+            #carrito_con_productos {
+                font-size: 30px;
+                margin-bottom: 2rem;
+            }
+        }
+        .carrito-final {
+            .boton_vaciar {font-size: 25px;}
+            .fin_compra {
+                #carrito-precio-final {font-size: 25px;}
+                .boton_final {font-size: 25px;}
+            }
+        }
+    }
+}
+/*************TAMAÑO LG*************/
+@media (max-width: 991.98px) {
+    .conteiner-carrito {
+        .carrito {
+            .texto_carrito_vacio {
+                font-size: 25px;
+            }
+
+            #carrito_con_productos {
+                font-size: 25px;
+                margin-bottom: 2rem;
+            }
+        }
+        .carrito-final {
+            .boton_vaciar {font-size: 20px;}
+            .fin_compra {
+                #carrito-precio-final {font-size: calc(1.3rem + .6vw);}
+                .boton_final {font-size: 20px;}
+            }
+        }
+    }
+}
+/*************TAMAÑO MD*************/
+@media (max-width: 799.98px) {
+    .conteiner-carrito {
+        .carrito {
+            .texto_carrito_vacio {
+                font-size: 22px;
+            }
+
+            #carrito_con_productos {
+                font-size: 25px;
+                margin-bottom: 2rem;
+            }
+        }
+        .carrito-final {
+            .boton_vaciar {font-size: 20px;}
+            .fin_compra {
+                #carrito-precio-final {font-size: calc(1.3rem + .6vw);}
+                .boton_final {font-size: 20px;}
+            }
+        }
+    }
+}
+/*************TAMAÑO SM*************/
+@media (max-width: 575.98px) {
+    .conteiner-carrito {
+        .carrito {
+            .texto_carrito_vacio {
+                font-size: 15px;
+            }
+
+            #carrito_con_productos {
+
+                .producto-carrito{
+                    h3 {font-size: 15px;}
+                    font-size: 15px;
+                    margin-bottom: 2rem;
+                }
+                
+            }
+        }
+        .carrito-final {
+            .boton_vaciar {
+                font-size: 12px;
+                
+            }
+            .fin_compra {
+                h2 {font-size: 15px;}
+                #carrito-precio-final {font-size: 16px;}
+                .boton_final {font-size: 12px;}
+            }
+        }
+    }
+}

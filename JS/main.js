@@ -161,7 +161,7 @@ function agregarProductoAlCarrito(señuelo) {
         style: {
           background: "rgba(189, 142, 99, 1)",
           borderRadius: "2rem",
-          fontSize: "30px",
+          fontSize: "20px",
         },
         onClick: function(){}
     }).showToast();

@@ -157,10 +157,7 @@ function finalizarCompra() {
             confirmButtonText: "Ok",
             allowOutsideClick: false
         }); 
-    }
-    
-
-        
+    }  
 }
 
 botonFinalizarCompra.addEventListener("click", finalizarCompra);

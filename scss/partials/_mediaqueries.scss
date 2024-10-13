@@ -1,118 +1,5 @@
 //MODELO RESPONSIVE
-/*************TAMAÑO XXL*************/
-@media (max-width: 2000px) { 
-    /*============  INICIO =============*/
-    body{ 
-        header{
-            .hero { 
-                justify-content: space-around;
 
-                .hero_titulo {
-                    font-size: 45px;
-                }
-
-                .hero_navbar {
-                    .navbar {
-                        
-                        .navbar-nav {
-                            
-                            .carrito {
-                                .bi .bi-cart3 {
-                                    font-style:italic;
-                                    margin-left: 6rem;
-                                    color: $coffee;
-                                }
-                         
-                            }
-                            .nav-link {
-                                font-size: 22px;
-                            }
-                        }
-                    }
-                } 
-                
-                .logo {
-                    width: 70%;
-                }
-            } 
-        }
-        .galeria {
-
-            display: flex;
-            flex-direction: column;
-
-            .foto_galeria {
-                align-items: center;
-            }
-            .texto_creador_galeria {
-                color: $coyote;
-                font-size: 35px;
-                max-width: 80%;
-                margin-top: 2rem;
-            }
-            .texto_galeria {
-                margin: 0 3rem;
-                text-wrap: wrap;
-               font-size: 30px;
-               text-align: center;
-            }
-        }
-
-        .intro {
-
-            .intro_titulo {
-                font-size: 40px;
-                padding-left: 3rem;
-            }
-
-            .intro_texto {
-                font-size: 30px;
-                text-align:inherit;
-            }
-        }
-
-        .conteiner {
-            margin: 3rem;
-
-            .titulo_productos {
-                font-size: 40px;
-                margin-bottom: 0;
-            }
-
-            .galeria_productos {
-                margin: 2rem;
-                display: grid;
-                grid-template-rows: auto;
-                grid-template-columns: 1fr 1fr 1fr;
-
-                
-                
-
-                .producto {
-                    align-content: center;
-                    .img_producto {
-                        height: 60%;
-                        
-                        object-fit: cover;
-                        object-position: center;
-                    }
-                }
-            }
-        }
-    }
-    /*============  FOOTER =============*/
-    .media {
-        
-        & img {
-            height: 50px;
-            align-self: end;
-        }
-
-        .text_footer {
-            font-size: 12px;
-        }
-    }
-}
 /*************TAMAÑO XL*************/
 @media (max-width: 1199.98px) { 
     /*============  INICIO =============*/
@@ -143,7 +30,9 @@
             } 
         }
         .galeria {
-
+            display: flex;
+            flex-direction: column;
+            margin: 0;
             .foto_galeria {
                 align-items: center;
             }

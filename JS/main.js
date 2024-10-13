@@ -117,7 +117,7 @@ const carritoPrecioFinal = document.querySelector("#carrito-precio-final");
 
 
 //CREO ARRAY DE PRODUCTOS
-const señuelos = fetch("./productos.json")
+const señuelos = fetch("../productos.json")
 .then(resp => resp.json())
 .then(productos => mostrarProductos(productos));
 
